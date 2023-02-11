@@ -1,0 +1,33 @@
+﻿@model Person
+
+<form method="post">
+
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+    <link href="~/bootstrap/css" rel="stylesheet">
+
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-row text-center">
+        <div class="col-12">
+            <div style="margin-top:200px">
+                <h2 style="margin-top:200px">Update your person</h2>
+
+                <input asp-for="@Model.Name" placeholder="Name" /> <br />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                <br />
+                <br />
+                <input asp-for="@Model.Email" placeholder="Email" /> <br />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                <br />
+                <br />
+                <input asp-for="@Model.Surname" placeholder="Surname" /> <br />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+                <br />
+                <br />
+                <a asp-action="ListAll" class="btn btn-dark">Back</a>
+                <input type="submit" class="btn btn-success" value="Update"/>
+                
+            </div>
+        </div>
+    </div>
+
+</form>

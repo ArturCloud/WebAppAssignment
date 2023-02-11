@@ -1,0 +1,35 @@
+﻿@model Person
+
+<form method="post">
+
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+    <link href="~/bootstrap/css" rel="stylesheet">
+
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-row text-center">
+        <div class="col-12">
+            <div style="margin-top:200px">
+                <h2 style="margin-top:200px">Create a new Person</h2>
+
+                <input asp-for="Name" placeholder="Name" /> <br />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+                <br />
+                <input asp-for="Email" placeholder="Email" /> <br />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <br />
+                <br />
+                <input asp-for="Surname" placeholder="Surname" /> <br />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+                <br />
+                <br />
+                <a asp-action="ListAll" class="btn btn-dark">Go to main page</a>
+                <input type="submit" class="btn btn-primary" value="Create new User"/>
+               
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+

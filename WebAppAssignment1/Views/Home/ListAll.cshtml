@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<Person>
+
+
+<html>
+
+<link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+<link href="~/bootstrap/css" rel="stylesheet">
+
+<body>
+    @if (Model.Any())
+    {
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th class="bg-white"></th>
+                    <th class="bg-white"></th>
+                </tr>
+            </thead>
+            @foreach(var per in Model)
+            {
+              <tbody>
+                <tr>
+                    <td>@per.Name</td>
+                    <td>@per.Surname</td>
+                    <td>@per.Email</td>
+                    <td class="table-borderless">
+                            <a asp-action="Update" asp-route-id="@per.Id" class="btn btn-outline-success">Update</a>
+                    </td>
+
+                    <td class="table-borderless">
+                            <a asp-action="Delete" asp-route-id="@per.Id" class="btn btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+              </tbody>   
+            }
+            
+        </table>
+        <div class="form-row text-center">
+            <a asp-action="Create" class="btn btn-dark">Back</a>
+            <a asp-action="DeleteAll" class="btn btn-danger">Delete all</a>
+        </div>
+        
+        
+    }
+    else
+    {
+        <h2 class="text-center" style="margin-top: 250px" >There is no data</h2>
+            <div class="form-row text-center">
+                <a asp-action="Create" class="btn btn-dark">Back</a>
+            </div>
+    }
+
+</body>
+</html>
